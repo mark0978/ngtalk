@@ -16,7 +16,7 @@ angular.module('ngtalkApp')
                 }).finally(function() {
                     $rootScope.dataService.people = null;
                 });
-            }, 3000);
+            }, 1);
             return deferred.promise;
         }
 
@@ -29,6 +29,16 @@ angular.module('ngtalkApp')
                     // Add a computed property to the data before it gets handed to the controller
                     lodash.forEach(people, function(person) {
                         person.idx2 = person.id * 2;
+                        person.images = [
+                            {
+                                name: person.name + ' Img',
+                                id: Math.random()
+                            },
+                            {
+                                name: person.name + ' Img2',
+                                id: Math.random()
+                            }
+                        ];
                     });
                 });
                 return promise;
