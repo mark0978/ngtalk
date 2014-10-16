@@ -1,0 +1,14 @@
+<div ng-show="dataService.people === 'loading'">Please wait, loading people</div>
+<div ng-show="dataService.people === null">
+  <h2>This is a table of the people</h2>
+  <table border="1">
+    <tr>
+      <th width="25%">Name</th>
+      <th width="25%">Age</th>
+    </tr>
+    <tr ng-repeat="person in people track by person.id">
+      <td>{{ person.name }}</td>
+      <td>{{ person.age }}</td>
+    </tr>
+  </table>
+</div>

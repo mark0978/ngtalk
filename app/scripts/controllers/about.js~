@@ -1,0 +1,16 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name ngtalkApp.controller:AboutCtrl
+ * @description
+ * # AboutCtrl
+ * Controller of the ngtalkApp
+ */
+angular.module('ngtalkApp')
+  .controller('AboutCtrl', function ($scope, People) {
+
+      People.getList().then(function(people) {
+          $scope.people = people;
+      });
+  });
